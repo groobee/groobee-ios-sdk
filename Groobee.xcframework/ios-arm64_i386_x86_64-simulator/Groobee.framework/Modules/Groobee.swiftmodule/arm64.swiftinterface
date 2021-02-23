@@ -1,0 +1,97 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Groobee
+import Foundation
+import Swift
+import UIKit
+@_hasMissingDesignatedInitializers public class GroobeeGoodsApi : Swift.Codable {
+  public static var sharedInstance: Groobee.GroobeeGoodsApi
+  public func withGoodsNm(goodsNm: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+  @_hasMissingDesignatedInitializers public class GroobeeGoodsApiBuilder {
+    public func andGoodsCd(goodsCd: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func andGoodsCate(goodsCate: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func andGoodsCateNm(goodsCateNm: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func andGoodsAmt(goodsAmt: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func andGoodsPrc(goodsPrc: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func andGoodsSalePrc(goodsSalePrc: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func andGoodsCnt(goodsCnt: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func andGoodsImg(goodsImg: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
+    public func build() -> Groobee.GroobeeGoodsApi
+    @objc deinit
+  }
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class BaseAPIResponse : Swift.Codable {
+  public static var sharedInstance: Groobee.BaseAPIResponse
+  public func getWebUrlKey() -> Swift.String
+  public func getWebCookieIdKey() -> Swift.String
+  public func getWebUserIdKey() -> Swift.String
+  public func getPushCidKey() -> Swift.String
+  public func getPushImgKey() -> Swift.String
+  public func getPushTypeKey() -> Swift.String
+  public func getPushMsgCntKey() -> Swift.String
+  public func getPushDeepLinkKey() -> Swift.String
+  public func getPushUrlLinkKey() -> Swift.String
+  public func getPushSendDtmKey() -> Swift.String
+  public func setSendDtm(pushSendDate: Swift.String)
+  public func getSendDtm() -> Swift.String
+  public func setServiceKey(serviceKey: Swift.String)
+  public func getServiceKey() -> Swift.String
+  public func setCookieId(cookieId: Swift.String)
+  public func getCookieId() -> Swift.String
+  public func setUserId(userId: Swift.String)
+  public func getUserId() -> Swift.String
+  public func setResonsecode(resposeCode: Swift.Int)
+  public func resetResonsecode()
+  public func getResonsecode() -> Swift.Int
+  public func setMemberId(memberId: Swift.String)
+  public func getMemberId() -> Swift.String
+  public func initTestCall()
+  public func callUserIdSetting()
+  public func setServiceKey(serviceKey: Swift.String, packageName: Swift.String)
+  public func setServiceLogin(memberId: Swift.String)
+  public func setPushAgreeAP(isPushAgreeAP: Swift.Bool)
+  public func setPushAgreeAA(isPushAgreeAA: Swift.Bool)
+  public func setPushAgreeAN(isPushAgreeAN: Swift.Bool)
+  public func setPushToken(pushToken: Swift.String)
+  public func setAppAdId(adId: Swift.String)
+  public func setAppEtc(appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String)
+  public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.Int, gender: Swift.String)
+  public func setMemberJoin(memberId: Swift.String)
+  public func setSearchKeyword(searchKwd: Swift.String)
+  public func setShoppingCart(goods: Swift.String)
+  public func setGoodsOrder(goods: Swift.String)
+  public func setGoodsOrderComplete(goods: Swift.String)
+  public func setViewGoods(goods: Swift.String)
+  public func setCategory(cateCd: Swift.String, cateNm: Swift.String)
+  public func setCustomerData(key: Swift.String, name: Swift.String, phone: Swift.String)
+  public func setPushMessagePRList(isPushOpened: Swift.Bool, campaignKeyList: Swift.String) -> Swift.String
+  public func setPushMessagePR(isPushOpened: Swift.Bool, campaignKey: Swift.String, pushMsgType: Swift.String, pushMsgCnt: Swift.String) -> Swift.String
+  public func setPushMessagePOIndirect(isPushOpened: Swift.Bool, campaignKeyList: Swift.String) -> Swift.String
+  public func setPushMessagePODirect(isPushOpened: Swift.Bool, campaignKey: Swift.String, pushMsgType: Swift.String, pushMsgCnt: Swift.String) -> Swift.String
+  public func setPushMessagePD(isPushOpened: Swift.Bool, campaignKey: Swift.String, pushMsgType: Swift.String, pushMsgCnt: Swift.Int) -> Swift.String
+  public func setScreenData(screenAct: Swift.String, screenName: Swift.String, screenData: Swift.String, deviceSDK: Swift.String)
+  public func setAppSessionStart(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
+  public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
+  public func setAppLocation(latitude: Swift.Double, longitude: Swift.Double)
+  public func networkConnection(baseDomainUrl: Swift.String, subDomainUrl: Swift.String, parameters: [Swift.String : Any], functionType: Swift.String, completion: @escaping (Swift.String?) -> ())
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class GroobeePushHistoryApi : Swift.Codable {
+  public static var sharedInstance: Groobee.GroobeePushHistoryApi
+  public func withCampaignKey(campaignKey: Swift.String) -> Groobee.GroobeePushHistoryApi.GroobeePushHistoryApiBuilder
+  @_hasMissingDesignatedInitializers public class GroobeePushHistoryApiBuilder {
+    public func andPushMsgType(pushMsgType: Swift.String) -> Groobee.GroobeePushHistoryApi.GroobeePushHistoryApiBuilder
+    public func andPushMsgCnt(pushMsgCnt: Swift.String) -> Groobee.GroobeePushHistoryApi.GroobeePushHistoryApiBuilder
+    public func andSendDtm(sendDtm: Swift.String) -> Groobee.GroobeePushHistoryApi.GroobeePushHistoryApiBuilder
+    public func build() -> Groobee.GroobeePushHistoryApi
+    @objc deinit
+  }
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
