@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
                       Groobee Extended Framework For Hybrid Application of Swift
                       DESC
 
-  s.homepage         = 'https://plateer.com'
+  s.homepage         = 'http://plateer.com'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Copyright', :file => <<-LICENSE
                           Copyright 2021 All Rights Reserved By Groobee
