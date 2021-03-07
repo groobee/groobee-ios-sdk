@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = "Groobee.xcframework"
   s.platform = :ios
   s.swift_version = "5.0"
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
   # s.dependency 'Alamofire', '~> 5.2' (example)
   
