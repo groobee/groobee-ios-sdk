@@ -52,11 +52,13 @@ import WebKit
     public func andAppData(appData: Groobee.GroobeeAppDataApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andMemberData(memberData: Groobee.GroobeeMemberDataApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andGoods(goods: [Groobee.GroobeeGoodsApi]) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andGoodsArray(goodsArray: Swift.Array<Groobee.GroobeeGoodsApi>) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andCategory(category: Groobee.GroobeeCategoryApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func build() -> Groobee.GroobeeApi
     public func buildWithAppData() -> Groobee.GroobeeApi
     public func buildWithMemberData() -> Groobee.GroobeeApi
     public func buildWithGoods() -> Groobee.GroobeeApi
+    public func buildWithGoodsArray() -> Groobee.GroobeeApi
     public func buildWithCategory() -> Groobee.GroobeeApi
     @objc deinit
   }
@@ -131,9 +133,9 @@ import WebKit
   public func applicationWillResignActive()
   public func applicationWillEnterForeground()
   public func applicationDidEnterBackground()
-  public func applicationDidBecomeActive()
   public func applicationWillTerminate()
   public func willPresent()
+  public func applicationDidBecomeActive()
   public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
   public func userNotificationCenter(userInfo: [Swift.AnyHashable : Any])
   public func setServiceKey(serviceKey: Swift.String)
@@ -144,15 +146,10 @@ import WebKit
   public func getUserId() -> Swift.String
   public func setFcmToken(fcmToken: Swift.String)
   public func getFcmToken() -> Swift.String
-  public func setResonsecode(resposeCode: Swift.Int)
-  public func resetResonsecode()
-  public func getResonsecode() -> Swift.Int
   public func setMemberId(memberId: Swift.String)
   public func getMemberId() -> Swift.String
   public func initTestCall()
   public func callUserIdSetting()
-  public func setAdId()
-  public func getAdId() -> Swift.String
   public func setAppBundleInformation()
   public func setServiceKey(serviceKey: Swift.String, packageName: Swift.String)
   public func setServiceLogin(memberId: Swift.String)
@@ -165,19 +162,18 @@ import WebKit
   public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.Int, gender: Swift.String)
   public func setMemberJoin(memberId: Swift.String)
   public func setSearchKeyword(searchKwd: Swift.String)
-  public func setShoppingCart(goods: [Groobee.GroobeeGoodsApi])
-  public func setGoodsOrder(goods: [Groobee.GroobeeGoodsApi])
-  public func setGoodsOrderComplete(orderNo: Swift.String, goods: [Groobee.GroobeeGoodsApi])
+  public func setShoppingCart(goods: Swift.Array<Groobee.GroobeeGoodsApi>)
+  public func setGoodsOrder(goods: Swift.Array<Groobee.GroobeeGoodsApi>)
+  public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<Groobee.GroobeeGoodsApi>)
   public func setViewGoods(goods: [Groobee.GroobeeGoodsApi])
   public func setCategory(cateCd: Swift.String, cateNm: Swift.String)
   public func setCustomerData(customData: Foundation.NSMutableDictionary)
   public func setPushMessagePRListWithOthers(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi], removedCampaignKeyList: [Groobee.GroobeePushApi], poDirectCampaignList: [Groobee.GroobeePushApi])
   public func setPushMessagePRListWithOthers(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi], removedCampaignKeyList: [Groobee.GroobeePushApi])
-  public func setPushMessagePOIndirect(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi])
   public func setPushMessagePOIndirect(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi], campaignKey: [Groobee.GroobeePushApi])
-  public func setPushMessagePOIndirectOnly(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi])
+  public func setPushMessagePOIndirect(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi])
   public func setPushMessagePODirect(isPushOpened: Swift.Bool, campaignKey: [Groobee.GroobeePushApi])
-  public func setScreenData(screenAct: Swift.String, screenName: Swift.String, screenData: Swift.String, deviceSDK: Swift.String)
+  public func setScreenData(screenName: Swift.String)
   public func setAppSessionStart(isTerminated: Swift.Bool)
   public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
   public func setAppLocation(latitude: Swift.Double, longitude: Swift.Double)
