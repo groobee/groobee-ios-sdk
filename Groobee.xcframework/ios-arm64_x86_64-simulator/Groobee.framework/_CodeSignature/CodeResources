@@ -10,7 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jTTU8UvCq/ZaqCF1ZCNsh63sWpU=
+		JekTZ795G9e7qF1w2j0T9ddY0CU=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		EPAv0450Bm90+vfs2NeLh6xvQ/k=
+		aLJJdxmPL1f7BOsFKI751GQep5g=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		EPAv0450Bm90+vfs2NeLh6xvQ/k=
+		aLJJdxmPL1f7BOsFKI751GQep5g=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		jmPIELsnY0aNc+MVLaunjQWAm1I=
+		bplmUAafslT3sAW2ie+RUex91wM=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		jmPIELsnY0aNc+MVLaunjQWAm1I=
+		bplmUAafslT3sAW2ie+RUex91wM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -88,7 +88,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rrt36pvR1D51LVzvNtXrhfCXE7iYwkqtbKJuQ5OC9sw=
+			5FjhhJWla6vSrIPbzdlOLGfehxF6VcDAUA+j3AZ8JzA=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
@@ -109,7 +109,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rrt36pvR1D51LVzvNtXrhfCXE7iYwkqtbKJuQ5OC9sw=
+			5FjhhJWla6vSrIPbzdlOLGfehxF6VcDAUA+j3AZ8JzA=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -130,7 +130,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yUtETskwV5FJpeuc9RxMl++31snfzaGgHkQzZ+CMETo=
+			1Wmw9e3sxOwZdGmuJlnVX1lpdJL54xZoZfQd501k8BQ=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
@@ -151,7 +151,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yUtETskwV5FJpeuc9RxMl++31snfzaGgHkQzZ+CMETo=
+			1Wmw9e3sxOwZdGmuJlnVX1lpdJL54xZoZfQd501k8BQ=
 			</data>
 		</dict>
 	</dict>
