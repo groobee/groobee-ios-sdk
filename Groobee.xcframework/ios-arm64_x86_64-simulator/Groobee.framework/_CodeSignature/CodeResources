@@ -10,7 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TnTVDdAcE8qd158ucCZ9wBAPV5w=
+		3xODXmaoT1SDsuJ3aKh9bZ+/3JM=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KNaoF3J34hBHwR6J60XBkZoPk5A=
+		O+ZoXJcP3cdsY47SNlE3e/WbOdY=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		KNaoF3J34hBHwR6J60XBkZoPk5A=
+		O+ZoXJcP3cdsY47SNlE3e/WbOdY=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Ti0nmReSWWa35cApSfIVen0fBjA=
+		h+nQiOpLRqJv4t4dS+oA+blOn9w=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Ti0nmReSWWa35cApSfIVen0fBjA=
+		h+nQiOpLRqJv4t4dS+oA+blOn9w=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -88,7 +88,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b4aAd0DHhC8FoMyYaeVIKipfyCnlFZu1rZF6s7CzuCI=
+			rSlm+Phkc/s88bqKoWPXqafHOQnLVIZQ1OrH2SniJmg=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
@@ -109,7 +109,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b4aAd0DHhC8FoMyYaeVIKipfyCnlFZu1rZF6s7CzuCI=
+			rSlm+Phkc/s88bqKoWPXqafHOQnLVIZQ1OrH2SniJmg=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -130,7 +130,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wrv5TTz8kj0vGqFELxQ01Xug4f2qyR0yN3Bf9HkLrQY=
+			5NVzvcqzqUVgrsZIk0q6f+VJ/p1zCSTu86JlZ1q1utM=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
@@ -151,7 +151,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wrv5TTz8kj0vGqFELxQ01Xug4f2qyR0yN3Bf9HkLrQY=
+			5NVzvcqzqUVgrsZIk0q6f+VJ/p1zCSTu86JlZ1q1utM=
 			</data>
 		</dict>
 	</dict>
