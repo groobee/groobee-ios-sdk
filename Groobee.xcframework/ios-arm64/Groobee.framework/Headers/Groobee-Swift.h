@@ -268,8 +268,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
 - (void)setGoodsOrderWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
 - (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setViewGoodsWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setViewGoodsForObjWithGoods:(GroobeeGoodsApi * _Nonnull)goods;
+- (void)setViewGoodsWithGoods:(GroobeeGoodsApi * _Nonnull)goods;
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setPushMessagePRListWithOthersWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList removedCampaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)removedCampaignKeyList poDirectCampaignList:(NSArray<GroobeePushApi *> * _Nonnull)poDirectCampaignList openLinkUrl:(NSString * _Nonnull)openLinkUrl deepLinkUrl:(NSString * _Nonnull)deepLinkUrl;
@@ -350,6 +349,13 @@ SWIFT_CLASS("_TtC7Groobee14GroobeePushApi")
 @end
 
 
+@class NSURL;
+@class NSData;
+@class NSError;
+
+@interface NSURLSession (SWIFT_EXTENSION(Groobee))
++ (void)downloadImageAtURL:(NSURL * _Nonnull)url withCompletionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

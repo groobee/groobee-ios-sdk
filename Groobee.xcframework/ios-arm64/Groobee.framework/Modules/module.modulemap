@@ -1,0 +1,4 @@
+framework module Groobee {
+  header "Groobee-Swift.h"
+  requires objc
+}
