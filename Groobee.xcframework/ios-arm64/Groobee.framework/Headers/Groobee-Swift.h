@@ -268,7 +268,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
 - (void)setGoodsOrderWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
 - (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setViewGoodsWithGoods:(GroobeeGoodsApi * _Nonnull)goods;
+- (void)setViewGoodsWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setPushMessagePRListWithOthersWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList removedCampaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)removedCampaignKeyList poDirectCampaignList:(NSArray<GroobeePushApi *> * _Nonnull)poDirectCampaignList openLinkUrl:(NSString * _Nonnull)openLinkUrl deepLinkUrl:(NSString * _Nonnull)deepLinkUrl;
