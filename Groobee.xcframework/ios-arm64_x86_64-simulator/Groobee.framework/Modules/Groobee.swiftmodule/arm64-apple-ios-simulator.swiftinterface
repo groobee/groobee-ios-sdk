@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
-// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Groobee
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Groobee
 import AdSupport
 import CoreLocation
 import Foundation
@@ -22,7 +22,7 @@ import WebKit
   @objc dynamic open class func downloadImage(atURL url: Foundation.URL, withCompletionHandler completionHandler: @escaping (Foundation.Data?, Foundation.NSError?) -> Swift.Void)
 }
 @_hasMissingDesignatedInitializers public class GroobeeCategoryApi : Swift.Codable {
-  public static var sharedInstance: Groobee.GroobeeCategoryApi
+  public static let sharedInstance: Groobee.GroobeeCategoryApi
   public func withInit() -> Groobee.GroobeeCategoryApi.GroobeeCategoryApiBuilder
   @_hasMissingDesignatedInitializers public class GroobeeCategoryApiBuilder {
     public func andCateCd(cateCd: Swift.String) -> Groobee.GroobeeCategoryApi.GroobeeCategoryApiBuilder
@@ -41,7 +41,7 @@ import WebKit
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class GroobeeApi : Swift.Codable {
-  public static var sharedInstance: Groobee.GroobeeApi
+  public static let sharedInstance: Groobee.GroobeeApi
   public func withServiceKey(serviceKey: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
   @_hasMissingDesignatedInitializers public class GroobeeApiBuilder {
     public func andCookieId(cookieId: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
@@ -68,7 +68,7 @@ import WebKit
   required public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class GroobeeGoodsApi : ObjectiveC.NSObject, Swift.Codable {
-  @objc public static var sharedInstance: Groobee.GroobeeGoodsApi
+  @objc public static let sharedInstance: Groobee.GroobeeGoodsApi
   @objc public init(goodsNm: Swift.String!, goodsCd: Swift.String?, goodsCate: Swift.String?, goodsCateNm: Swift.String?, goodsAmt: Swift.String?, goodsPrc: Swift.String?, goodsSalePrc: Swift.String?, goodsCnt: Swift.String?, goodsImg: Swift.String?)
   @objc public func withGoodsNm(goodsNm: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
   @_hasMissingDesignatedInitializers @objc public class GroobeeGoodsApiBuilder : ObjectiveC.NSObject {
@@ -89,7 +89,7 @@ import WebKit
   required public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class GroobeeMemberDataApi : Swift.Codable {
-  public static var sharedInstance: Groobee.GroobeeMemberDataApi
+  public static let sharedInstance: Groobee.GroobeeMemberDataApi
   public func withInit() -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
   @_hasMissingDesignatedInitializers public class GroobeeMemberDataApiBuilder {
     public func andId(id: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
@@ -104,7 +104,7 @@ import WebKit
   required public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class GroobeePushApi : ObjectiveC.NSObject, Swift.Codable {
-  public static var sharedInstance: Groobee.GroobeePushApi
+  public static let sharedInstance: Groobee.GroobeePushApi
   public func withCampaignKey(campaignKey: Swift.String) -> Groobee.GroobeePushApi.GroobeePushApiBuilder
   @_hasMissingDesignatedInitializers public class GroobeePushApiBuilder {
     public func andPushMsgType(pushMsgType: Swift.String) -> Groobee.GroobeePushApi.GroobeePushApiBuilder
@@ -118,7 +118,7 @@ import WebKit
   required public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc open class BaseAPIResponse : ObjectiveC.NSObject {
-  @objc public static var sharedInstance: Groobee.BaseAPIResponse
+  @objc public static let sharedInstance: Groobee.BaseAPIResponse
   @objc public func getWebUrlKey() -> Swift.String
   @objc public func getWebCookieIdKey() -> Swift.String
   @objc public func getWebUserIdKey() -> Swift.String
@@ -190,7 +190,7 @@ import WebKit
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class GroobeeAppDataApi : Swift.Codable {
-  public static var sharedInstance: Groobee.GroobeeAppDataApi
+  public static let sharedInstance: Groobee.GroobeeAppDataApi
   public func withInit() -> Groobee.GroobeeAppDataApi.GroobeeAppDataApiBuilder
   @_hasMissingDesignatedInitializers public class GroobeeAppDataApiBuilder {
     public func andPackageName(packageName: Swift.String) -> Groobee.GroobeeAppDataApi.GroobeeAppDataApiBuilder
@@ -226,7 +226,7 @@ import WebKit
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class GroobeeCustomDataApi : Swift.Codable {
-  public static var sharedInstance: Groobee.GroobeeCustomDataApi
+  public static let sharedInstance: Groobee.GroobeeCustomDataApi
   public init(key: Swift.String?, value: Swift.String?)
   public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
