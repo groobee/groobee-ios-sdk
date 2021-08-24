@@ -168,7 +168,7 @@ import WebKit
   @objc public func setShoppingCart(goods: Swift.Array<Groobee.GroobeeGoodsApi>)
   @objc public func setGoodsOrder(goods: Swift.Array<Groobee.GroobeeGoodsApi>)
   @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<Groobee.GroobeeGoodsApi>)
-  @objc public func setViewGoods(goods: Swift.Array<Groobee.GroobeeGoodsApi>)
+  @objc public func setViewGoods(goods: Groobee.GroobeeGoodsApi)
   @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String)
   @objc public func setCustomerData(customData: Foundation.NSMutableDictionary)
   @objc public func setPushMessagePRListWithOthers(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi], removedCampaignKeyList: [Groobee.GroobeePushApi], poDirectCampaignList: [Groobee.GroobeePushApi], openLinkUrl: Swift.String, deepLinkUrl: Swift.String)
