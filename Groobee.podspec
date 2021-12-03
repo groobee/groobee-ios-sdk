@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Groobee'
-  s.version          = '1.23'
-  s.summary          = 'Groobee Framework Library'
+  s.name             = 'GroobeeDev'
+  s.version          = '1.0'
+  s.summary          = 'GroobeeDev Framework Library'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,10 +28,10 @@ Pod::Spec.new do |s|
                           LICENSE
                         }
 
-  s.author           = { 'Groobee' => 'hongoon@plateer.com' }
-  s.source           = { :git => 'https://github.com/groobee/groobee-ios-sdk.git' }
+  s.author           = { 'GroobeeDev' => 'hongoon@plateer.com' }
+  s.source           = { :git => 'https://github.com/groobee/groobee-ios-sdk-dev.git' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  s.vendored_frameworks = "Groobee.xcframework"
+  s.vendored_frameworks = "GroobeeDev.xcframework"
   s.platform = :ios
   s.swift_version = "5.0"
   s.ios.deployment_target = '11.0'
