@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Groobee
 import AdSupport
 import CoreLocation
@@ -10,16 +10,17 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 import WebKit
+import _Concurrency
 @_inheritsConvenienceInitializers @available(iOS 10.0, *)
-@objc open class BaseNotificationContent : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
-  @objc override dynamic public func viewDidLoad()
-  @objc public func didReceive(_ notification: UserNotifications.UNNotification)
-  @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_Concurrency.MainActor(unsafe) open class BaseNotificationContent : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
+  @objc @_Concurrency.MainActor(unsafe) override dynamic public func viewDidLoad()
+  @objc @_Concurrency.MainActor(unsafe) public func didReceive(_ notification: UserNotifications.UNNotification)
+  @objc @_Concurrency.MainActor(unsafe) public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc extension URLSession {
+@objc extension Foundation.URLSession {
   @objc dynamic open class func downloadImage(atURL url: Foundation.URL, withCompletionHandler completionHandler: @escaping (Foundation.Data?, Foundation.NSError?) -> Swift.Void)
 }
 @_hasMissingDesignatedInitializers public class GroobeeCategoryApi : Swift.Codable {
@@ -50,6 +51,8 @@ import WebKit
     public func andUserId(userId: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andDeviceType(deviceType: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andDeviceCd(deviceCd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andOsCd(osCd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    @discardableResult
     public func andMemberId(memberId: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andActionCd(actionCd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andSearchKwd(searchKwd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
@@ -83,7 +86,6 @@ import WebKit
     @objc public func andGoodsCnt(goodsCnt: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
     @objc public func andGoodsImg(goodsImg: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
     @objc public func build() -> Groobee.GroobeeGoodsApi
-    @objc override dynamic public init()
     @objc deinit
   }
   @objc deinit
