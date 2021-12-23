@@ -186,7 +186,6 @@ import _Concurrency
   @objc public func setAppSessionStart(isTerminated: Swift.Bool)
   @objc public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
   @objc public func setAppLocation(latitude: Swift.Double, longitude: Swift.Double)
-  @objc public func testBuild()
   @objc public func locationInformation(userLocation: CoreLocation.CLLocation)
   @objc public func webViewCookiesAll(webview: WebKit.WKWebView, urlRequest: Foundation.URLRequest)
   @objc public func webViewCookies(cookie: Foundation.HTTPCookie)

@@ -284,7 +284,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationWithLatitude:(double)latitude longitude:(double)longitude;
-- (void)testBuild;
 - (void)locationInformationWithUserLocation:(CLLocation * _Nonnull)userLocation;
 - (void)webViewCookiesAllWithWebview:(WKWebView * _Nonnull)webview urlRequest:(NSURLRequest * _Nonnull)urlRequest;
 - (void)webViewCookiesWithCookie:(NSHTTPCookie * _Nonnull)cookie;
@@ -651,7 +650,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationWithLatitude:(double)latitude longitude:(double)longitude;
-- (void)testBuild;
 - (void)locationInformationWithUserLocation:(CLLocation * _Nonnull)userLocation;
 - (void)webViewCookiesAllWithWebview:(WKWebView * _Nonnull)webview urlRequest:(NSURLRequest * _Nonnull)urlRequest;
 - (void)webViewCookiesWithCookie:(NSHTTPCookie * _Nonnull)cookie;
