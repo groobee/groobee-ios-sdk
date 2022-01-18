@@ -265,13 +265,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setAppAdIdWithAdId:(NSString * _Nonnull)adId;
 - (void)setAppEtcWithAppName:(NSString * _Nonnull)appName appVersion:(NSString * _Nonnull)appVersion appOSVersion:(NSString * _Nonnull)appOSVersion;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSInteger)age gender:(NSString * _Nonnull)gender;
-- (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId;
-- (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd;
-- (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setGoodsOrderWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setViewGoodsWithGoods:(GroobeeGoodsApi * _Nonnull)goods;
-- (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm;
+- (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId;
+- (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId;
+- (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setGoodsOrderWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setViewGoodsWithGoods:(GroobeeGoodsApi * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setPushMessagePRListWithOthersWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList removedCampaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)removedCampaignKeyList poDirectCampaignList:(NSArray<GroobeePushApi *> * _Nonnull)poDirectCampaignList openLinkUrl:(NSString * _Nonnull)openLinkUrl deepLinkUrl:(NSString * _Nonnull)deepLinkUrl;
 - (void)setPushMessagePRListWithOthersWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList removedCampaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)removedCampaignKeyList;
@@ -280,7 +280,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setPushMessagePOIndirectWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList;
 - (void)setPushMessagePODirectWithIsPushOpened:(BOOL)isPushOpened campaignKey:(NSArray<GroobeePushApi *> * _Nonnull)campaignKey;
 - (void)setPushMessagePODirectWithIsPushOpened:(BOOL)isPushOpened campaignKey:(NSArray<GroobeePushApi *> * _Nonnull)campaignKey openLinkUrl:(NSString * _Nonnull)openLinkUrl deepLinkUrl:(NSString * _Nonnull)deepLinkUrl;
-- (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName;
+- (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId;
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationWithLatitude:(double)latitude longitude:(double)longitude;
@@ -313,6 +313,33 @@ SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,intr
 - (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
 - (void)serviceExtensionTimeWillExpire;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class GroobeeConfig;
+
+SWIFT_CLASS("_TtC7Groobee12GroobeeBuild")
+@interface GroobeeBuild : NSObject
++ (void)configure:(GroobeeConfig * _Nonnull)build;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class GroobeeConfigBuilder;
+
+SWIFT_CLASS("_TtC7Groobee13GroobeeConfig")
+@interface GroobeeConfig : NSObject
+- (nonnull instancetype)initWithBuilder:(GroobeeConfigBuilder * _Nonnull)builder OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)getServiceKey SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getPackageName SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtCC7Groobee13GroobeeConfig20GroobeeConfigBuilder")
+@interface GroobeeConfigBuilder : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (GroobeeConfigBuilder * _Nonnull)setServiceKeyWithServiceKey:(NSString * _Nonnull)serviceKey packageName:(NSString * _Nonnull)packageName SWIFT_WARN_UNUSED_RESULT;
+- (GroobeeConfig * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class GroobeeGoodsApiBuilder;
@@ -631,13 +658,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setAppAdIdWithAdId:(NSString * _Nonnull)adId;
 - (void)setAppEtcWithAppName:(NSString * _Nonnull)appName appVersion:(NSString * _Nonnull)appVersion appOSVersion:(NSString * _Nonnull)appOSVersion;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSInteger)age gender:(NSString * _Nonnull)gender;
-- (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId;
-- (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd;
-- (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setGoodsOrderWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods;
-- (void)setViewGoodsWithGoods:(GroobeeGoodsApi * _Nonnull)goods;
-- (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm;
+- (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId;
+- (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId;
+- (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setGoodsOrderWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setViewGoodsWithGoods:(GroobeeGoodsApi * _Nonnull)goods screenId:(NSString * _Nonnull)screenId;
+- (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setPushMessagePRListWithOthersWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList removedCampaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)removedCampaignKeyList poDirectCampaignList:(NSArray<GroobeePushApi *> * _Nonnull)poDirectCampaignList openLinkUrl:(NSString * _Nonnull)openLinkUrl deepLinkUrl:(NSString * _Nonnull)deepLinkUrl;
 - (void)setPushMessagePRListWithOthersWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList removedCampaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)removedCampaignKeyList;
@@ -646,7 +673,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setPushMessagePOIndirectWithIsPushOpened:(BOOL)isPushOpened campaignKeyList:(NSArray<GroobeePushApi *> * _Nonnull)campaignKeyList;
 - (void)setPushMessagePODirectWithIsPushOpened:(BOOL)isPushOpened campaignKey:(NSArray<GroobeePushApi *> * _Nonnull)campaignKey;
 - (void)setPushMessagePODirectWithIsPushOpened:(BOOL)isPushOpened campaignKey:(NSArray<GroobeePushApi *> * _Nonnull)campaignKey openLinkUrl:(NSString * _Nonnull)openLinkUrl deepLinkUrl:(NSString * _Nonnull)deepLinkUrl;
-- (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName;
+- (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId;
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationWithLatitude:(double)latitude longitude:(double)longitude;
@@ -679,6 +706,33 @@ SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,intr
 - (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
 - (void)serviceExtensionTimeWillExpire;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class GroobeeConfig;
+
+SWIFT_CLASS("_TtC7Groobee12GroobeeBuild")
+@interface GroobeeBuild : NSObject
++ (void)configure:(GroobeeConfig * _Nonnull)build;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class GroobeeConfigBuilder;
+
+SWIFT_CLASS("_TtC7Groobee13GroobeeConfig")
+@interface GroobeeConfig : NSObject
+- (nonnull instancetype)initWithBuilder:(GroobeeConfigBuilder * _Nonnull)builder OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)getServiceKey SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getPackageName SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtCC7Groobee13GroobeeConfig20GroobeeConfigBuilder")
+@interface GroobeeConfigBuilder : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (GroobeeConfigBuilder * _Nonnull)setServiceKeyWithServiceKey:(NSString * _Nonnull)serviceKey packageName:(NSString * _Nonnull)packageName SWIFT_WARN_UNUSED_RESULT;
+- (GroobeeConfig * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class GroobeeGoodsApiBuilder;
