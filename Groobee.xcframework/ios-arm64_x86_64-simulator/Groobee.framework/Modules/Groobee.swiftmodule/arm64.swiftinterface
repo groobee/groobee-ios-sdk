@@ -165,6 +165,8 @@ import _Concurrency
   @objc public func userNotificationCenter(userInfo: [Swift.AnyHashable : Any])
   @objc public func setServiceKey(serviceKey: Swift.String)
   public func getServiceKey() -> Swift.String
+  @objc public func setPackageName(packageName: Swift.String)
+  public func getPackageName() -> Swift.String
   @objc public func setCookieId(cookieId: Swift.String)
   public func getCookieId() -> Swift.String
   @objc public func setUserId(userId: Swift.String)

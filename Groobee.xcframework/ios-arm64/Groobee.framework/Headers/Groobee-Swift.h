@@ -248,6 +248,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)setServiceKeyWithServiceKey:(NSString * _Nonnull)serviceKey;
+- (void)setPackageNameWithPackageName:(NSString * _Nonnull)packageName;
 - (void)setCookieIdWithCookieId:(NSString * _Nonnull)cookieId;
 - (void)setUserIdWithUserId:(NSString * _Nonnull)userId;
 - (void)setFcmTokenWithFcmToken:(NSString * _Nonnull)fcmToken;
