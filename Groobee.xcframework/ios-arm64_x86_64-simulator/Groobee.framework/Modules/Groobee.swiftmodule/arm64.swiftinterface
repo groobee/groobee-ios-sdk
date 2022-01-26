@@ -11,6 +11,7 @@ import UserNotifications
 import UserNotificationsUI
 import WebKit
 import _Concurrency
+public typealias DetectClickedButton = () -> Swift.Void
 @_inheritsConvenienceInitializers @available(iOS 10.0, *)
 @objc @_Concurrency.MainActor(unsafe) open class BaseNotificationContent : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
   @objc @_Concurrency.MainActor(unsafe) override dynamic public func viewDidLoad()
@@ -36,12 +37,25 @@ import _Concurrency
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
+@objc @_inheritsConvenienceInitializers @available(iOS 11.0, *)
+@_Concurrency.MainActor(unsafe) public class InAppMessageViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static var sharedInstance: Groobee.InAppMessageViewController
+  @_Concurrency.MainActor(unsafe) public func setClickEvent(detect: Groobee.DetectClickedButton? = nil)
+  @_Concurrency.MainActor(unsafe) public func show(inAppMessage: Groobee.InAppMessageModel, campaignKey: Swift.String?, msgType: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @available(iOS 10.0, *)
 @objc open class BaseNotificationService : UserNotifications.UNNotificationServiceExtension {
   @objc override dynamic public func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
   @objc override dynamic public func serviceExtensionTimeWillExpire()
   @objc override dynamic public init()
   @objc deinit
+}
+public struct InAppMessageModel : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class GroobeeApi : Swift.Codable {
   public static var sharedInstance: Groobee.GroobeeApi
@@ -58,6 +72,11 @@ import _Concurrency
     public func andActionCd(actionCd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andSearchKwd(searchKwd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andOrderNo(orderNo: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andMsgType(msgType: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andCampaignKey(campaignKey: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andCampaignTypeCd(campaignTypeCd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andTrackingId(trackingId: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andClickData(clickData: Groobee.ClickData) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andAppData(appData: Groobee.GroobeeAppDataApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andMemberData(memberData: Groobee.GroobeeMemberDataApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andGoodsArray(goods: Swift.Array<Groobee.GroobeeGoodsApi>) -> Groobee.GroobeeApi.GroobeeApiBuilder
@@ -108,13 +127,21 @@ import _Concurrency
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
+public struct MessageButton : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 @objc public class GroobeeConfig : ObjectiveC.NSObject {
   @objc public init(builder: Groobee.GroobeeConfig.GroobeeConfigBuilder)
   @objc public func getServiceKey() -> Swift.String?
   @objc public func getPackageName() -> Swift.String?
+  @objc public func getInAppMsgMarginTop() -> CoreGraphics.CGFloat
+  @objc public func getInAppMsgMarginBottom() -> CoreGraphics.CGFloat
   @_inheritsConvenienceInitializers @objc public class GroobeeConfigBuilder : ObjectiveC.NSObject {
     @objc override dynamic public init()
     @objc public func setServiceKey(serviceKey: Swift.String, packageName: Swift.String) -> Groobee.GroobeeConfig.GroobeeConfigBuilder
+    @objc public func setInAppMsgMarginTop(_ topMarginValue: CoreGraphics.CGFloat) -> Groobee.GroobeeConfig.GroobeeConfigBuilder
+    @objc public func setInAppMsgMarginBottom(_ bottomMarginValue: CoreGraphics.CGFloat) -> Groobee.GroobeeConfig.GroobeeConfigBuilder
     @objc public func build() -> Groobee.GroobeeConfig
     @objc deinit
   }
@@ -138,6 +165,10 @@ import _Concurrency
   @objc public static func configure(_ build: Groobee.GroobeeConfig)
   @objc override dynamic public init()
   @objc deinit
+}
+public struct ClickData : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc open class BaseAPIResponse : ObjectiveC.NSObject {
   @objc public static var sharedInstance: Groobee.BaseAPIResponse
@@ -187,13 +218,13 @@ import _Concurrency
   @objc public func setAppAdId(adId: Swift.String)
   @objc public func setAppEtc(appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String)
   @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.Int, gender: Swift.String)
-  @objc public func setMemberJoin(memberId: Swift.String, screenId: Swift.String)
-  @objc public func setSearchKeyword(searchKwd: Swift.String, screenId: Swift.String)
-  @objc public func setShoppingCart(goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String)
-  @objc public func setGoodsOrder(goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String)
-  @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String)
-  @objc public func setViewGoods(goods: Groobee.GroobeeGoodsApi, screenId: Swift.String)
-  @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String)
+  @objc public func setMemberJoin(memberId: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
+  @objc public func setSearchKeyword(searchKwd: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
+  @objc public func setShoppingCart(goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
+  @objc public func setGoodsOrder(goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
+  @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
+  @objc public func setViewGoods(goods: Groobee.GroobeeGoodsApi, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
+  @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
   @objc public func setCustomerData(customData: Foundation.NSMutableDictionary)
   @objc public func setPushMessagePRListWithOthers(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi], removedCampaignKeyList: [Groobee.GroobeePushApi], poDirectCampaignList: [Groobee.GroobeePushApi], openLinkUrl: Swift.String, deepLinkUrl: Swift.String)
   @objc public func setPushMessagePRListWithOthers(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi], removedCampaignKeyList: [Groobee.GroobeePushApi])
@@ -202,14 +233,15 @@ import _Concurrency
   @objc public func setPushMessagePOIndirect(isPushOpened: Swift.Bool, campaignKeyList: [Groobee.GroobeePushApi])
   @objc public func setPushMessagePODirect(isPushOpened: Swift.Bool, campaignKey: [Groobee.GroobeePushApi])
   @objc public func setPushMessagePODirect(isPushOpened: Swift.Bool, campaignKey: [Groobee.GroobeePushApi], openLinkUrl: Swift.String, deepLinkUrl: Swift.String)
-  @objc public func setScreenData(screenName: Swift.String, screenId: Swift.String)
+  @objc public func setScreenData(screenName: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
   @objc public func setAppSessionStart(isTerminated: Swift.Bool)
   @objc public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
   @objc public func setAppLocation(latitude: Swift.Double, longitude: Swift.Double)
   @objc public func locationInformation(userLocation: CoreLocation.CLLocation)
   @objc public func webViewCookiesAll(webview: WebKit.WKWebView, urlRequest: Foundation.URLRequest)
   @objc public func webViewCookies(cookie: Foundation.HTTPCookie)
-  @objc public func networkConnection(baseDomainUrl: Swift.String, subDomainUrl: Swift.String, parameters: Swift.String, functionType: Swift.String, completion: @escaping (Swift.String?) -> ())
+  public func showInAppMessage(inAppMessage: Groobee.InAppMessageModel, campaignKey: Swift.String?, msgType: Swift.String?)
+  @objc public func networkConnection(baseDomainUrl: Swift.String, subDomainUrl: Swift.String, parameters: Swift.String, functionType: Swift.String, screenId: Swift.String? = nil, completion: @escaping (Swift.String?) -> ())
   @objc override dynamic public init()
   @objc deinit
 }
@@ -255,4 +287,8 @@ import _Concurrency
   public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
+}
+public struct MessageText : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
