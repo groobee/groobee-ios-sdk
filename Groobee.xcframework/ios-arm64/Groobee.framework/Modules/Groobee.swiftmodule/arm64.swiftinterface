@@ -72,6 +72,8 @@ public struct InAppMessageModel : Swift.Codable {
     public func andActionCd(actionCd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andSearchKwd(searchKwd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andOrderNo(orderNo: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andWebCookieId(webCookieId: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    public func andWebUserId(webUserId: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andMsgType(msgType: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andCampaignKey(campaignKey: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andCampaignTypeCd(campaignTypeCd: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
@@ -239,9 +241,9 @@ public struct ClickData : Swift.Codable {
   @objc public func setAppLocation(latitude: Swift.Double, longitude: Swift.Double)
   @objc public func locationInformation(userLocation: CoreLocation.CLLocation)
   @objc public func webViewCookiesAll(webview: WebKit.WKWebView, urlRequest: Foundation.URLRequest)
-  @objc public func webViewCookies(cookie: Foundation.HTTPCookie)
+  @objc public func getCookieById(cookies: [Foundation.HTTPCookie], _ cookieId: Swift.String) -> Swift.String
   public func showInAppMessage(inAppMessage: Groobee.InAppMessageModel, campaignKey: Swift.String?, msgType: Swift.String?)
-  @objc public func networkConnection(baseDomainUrl: Swift.String, subDomainUrl: Swift.String, parameters: Swift.String, functionType: Swift.String, screenId: Swift.String? = nil, completion: @escaping (Swift.String?) -> ())
+  @objc public func networkConnection(baseDomainUrl: Swift.String, subDomainUrl: Swift.String, parameters: Swift.String, functionType: Swift.String, screenId: Swift.String? = nil, webCookieId: Swift.String? = nil, completion: @escaping (Swift.String?) -> ())
   @objc override dynamic public init()
   @objc deinit
 }

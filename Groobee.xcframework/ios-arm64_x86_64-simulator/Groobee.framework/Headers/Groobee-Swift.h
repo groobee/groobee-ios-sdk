@@ -287,8 +287,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setAppLocationWithLatitude:(double)latitude longitude:(double)longitude;
 - (void)locationInformationWithUserLocation:(CLLocation * _Nonnull)userLocation;
 - (void)webViewCookiesAllWithWebview:(WKWebView * _Nonnull)webview urlRequest:(NSURLRequest * _Nonnull)urlRequest;
-- (void)webViewCookiesWithCookie:(NSHTTPCookie * _Nonnull)cookie;
-- (void)networkConnectionWithBaseDomainUrl:(NSString * _Nonnull)baseDomainUrl subDomainUrl:(NSString * _Nonnull)subDomainUrl parameters:(NSString * _Nonnull)parameters functionType:(NSString * _Nonnull)functionType screenId:(NSString * _Nullable)screenId completion:(void (^ _Nonnull)(NSString * _Nullable))completion;
+- (NSString * _Nonnull)getCookieByIdWithCookies:(NSArray<NSHTTPCookie *> * _Nonnull)cookies :(NSString * _Nonnull)cookieId SWIFT_WARN_UNUSED_RESULT;
+- (void)networkConnectionWithBaseDomainUrl:(NSString * _Nonnull)baseDomainUrl subDomainUrl:(NSString * _Nonnull)subDomainUrl parameters:(NSString * _Nonnull)parameters functionType:(NSString * _Nonnull)functionType screenId:(NSString * _Nullable)screenId webCookieId:(NSString * _Nullable)webCookieId completion:(void (^ _Nonnull)(NSString * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -696,8 +696,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setAppLocationWithLatitude:(double)latitude longitude:(double)longitude;
 - (void)locationInformationWithUserLocation:(CLLocation * _Nonnull)userLocation;
 - (void)webViewCookiesAllWithWebview:(WKWebView * _Nonnull)webview urlRequest:(NSURLRequest * _Nonnull)urlRequest;
-- (void)webViewCookiesWithCookie:(NSHTTPCookie * _Nonnull)cookie;
-- (void)networkConnectionWithBaseDomainUrl:(NSString * _Nonnull)baseDomainUrl subDomainUrl:(NSString * _Nonnull)subDomainUrl parameters:(NSString * _Nonnull)parameters functionType:(NSString * _Nonnull)functionType screenId:(NSString * _Nullable)screenId completion:(void (^ _Nonnull)(NSString * _Nullable))completion;
+- (NSString * _Nonnull)getCookieByIdWithCookies:(NSArray<NSHTTPCookie *> * _Nonnull)cookies :(NSString * _Nonnull)cookieId SWIFT_WARN_UNUSED_RESULT;
+- (void)networkConnectionWithBaseDomainUrl:(NSString * _Nonnull)baseDomainUrl subDomainUrl:(NSString * _Nonnull)subDomainUrl parameters:(NSString * _Nonnull)parameters functionType:(NSString * _Nonnull)functionType screenId:(NSString * _Nullable)screenId webCookieId:(NSString * _Nullable)webCookieId completion:(void (^ _Nonnull)(NSString * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
