@@ -224,7 +224,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class NSURLRequest;
 @class NSHTTPCookie;
 
-SWIFT_CLASS("_TtC7Groobee15BaseAPIResponse")
+SWIFT_CLASS("_TtC7Groobee15BaseAPIResponse") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface BaseAPIResponse : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIResponse * _Nonnull sharedInstance;)
 + (BaseAPIResponse * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
@@ -255,6 +255,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setUserIdWithUserId:(NSString * _Nonnull)userId;
 - (void)setFcmTokenWithFcmToken:(NSString * _Nonnull)fcmToken;
 - (void)setMemberIdWithMemberId:(NSString * _Nonnull)memberId;
+- (void)setMemberDataWithMemberData:(NSString * _Nonnull)memberData;
 - (void)initTestCall SWIFT_METHOD_FAMILY(none);
 - (void)setAppBundleInformation;
 - (void)setServiceKeyWithServiceKey:(NSString * _Nonnull)serviceKey packageName:(NSString * _Nonnull)packageName;
@@ -265,7 +266,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)setAppAdIdWithAdId:(NSString * _Nonnull)adId;
 - (void)setAppEtcWithAppName:(NSString * _Nonnull)appName appVersion:(NSString * _Nonnull)appVersion appOSVersion:(NSString * _Nonnull)appOSVersion;
-- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSInteger)age gender:(NSString * _Nonnull)gender;
+- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSInteger)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
 - (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
@@ -297,7 +298,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 @class NSBundle;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,introduced=10.0)
+SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface BaseNotificationContent : UIViewController <UNNotificationContentExtension>
 - (void)viewDidLoad;
 - (void)didReceiveNotification:(UNNotification * _Nonnull)notification;
@@ -309,7 +310,7 @@ SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,intr
 @class UNNotificationRequest;
 @class UNNotificationContent;
 
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,introduced=10.0)
+SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface BaseNotificationService : UNNotificationServiceExtension
 - (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
 - (void)serviceExtensionTimeWillExpire;
@@ -318,7 +319,7 @@ SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,intr
 
 @class GroobeeConfig;
 
-SWIFT_CLASS("_TtC7Groobee12GroobeeBuild")
+SWIFT_CLASS("_TtC7Groobee12GroobeeBuild") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface GroobeeBuild : NSObject
 + (void)configure:(GroobeeConfig * _Nonnull)build;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -633,7 +634,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class NSURLRequest;
 @class NSHTTPCookie;
 
-SWIFT_CLASS("_TtC7Groobee15BaseAPIResponse")
+SWIFT_CLASS("_TtC7Groobee15BaseAPIResponse") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface BaseAPIResponse : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIResponse * _Nonnull sharedInstance;)
 + (BaseAPIResponse * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
@@ -664,6 +665,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setUserIdWithUserId:(NSString * _Nonnull)userId;
 - (void)setFcmTokenWithFcmToken:(NSString * _Nonnull)fcmToken;
 - (void)setMemberIdWithMemberId:(NSString * _Nonnull)memberId;
+- (void)setMemberDataWithMemberData:(NSString * _Nonnull)memberData;
 - (void)initTestCall SWIFT_METHOD_FAMILY(none);
 - (void)setAppBundleInformation;
 - (void)setServiceKeyWithServiceKey:(NSString * _Nonnull)serviceKey packageName:(NSString * _Nonnull)packageName;
@@ -674,7 +676,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)setAppAdIdWithAdId:(NSString * _Nonnull)adId;
 - (void)setAppEtcWithAppName:(NSString * _Nonnull)appName appVersion:(NSString * _Nonnull)appVersion appOSVersion:(NSString * _Nonnull)appOSVersion;
-- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSInteger)age gender:(NSString * _Nonnull)gender;
+- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSInteger)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
 - (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setShoppingCartWithGoods:(NSArray<GroobeeGoodsApi *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
@@ -706,7 +708,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 @class NSBundle;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,introduced=10.0)
+SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface BaseNotificationContent : UIViewController <UNNotificationContentExtension>
 - (void)viewDidLoad;
 - (void)didReceiveNotification:(UNNotification * _Nonnull)notification;
@@ -718,7 +720,7 @@ SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,intr
 @class UNNotificationRequest;
 @class UNNotificationContent;
 
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,introduced=10.0)
+SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface BaseNotificationService : UNNotificationServiceExtension
 - (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
 - (void)serviceExtensionTimeWillExpire;
@@ -727,7 +729,7 @@ SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,intr
 
 @class GroobeeConfig;
 
-SWIFT_CLASS("_TtC7Groobee12GroobeeBuild")
+SWIFT_CLASS("_TtC7Groobee12GroobeeBuild") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface GroobeeBuild : NSObject
 + (void)configure:(GroobeeConfig * _Nonnull)build;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

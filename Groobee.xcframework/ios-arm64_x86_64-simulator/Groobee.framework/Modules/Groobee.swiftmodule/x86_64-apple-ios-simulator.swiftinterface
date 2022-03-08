@@ -12,7 +12,7 @@ import UserNotificationsUI
 import WebKit
 import _Concurrency
 public typealias DetectClickedButton = () -> Swift.Void
-@_inheritsConvenienceInitializers @available(iOS 10.0, *)
+@_inheritsConvenienceInitializers @available(iOS 11.0, *)
 @objc @_Concurrency.MainActor(unsafe) open class BaseNotificationContent : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
   @objc @_Concurrency.MainActor(unsafe) override dynamic public func viewDidLoad()
   @objc @_Concurrency.MainActor(unsafe) public func didReceive(_ notification: UserNotifications.UNNotification)
@@ -46,7 +46,7 @@ public typealias DetectClickedButton = () -> Swift.Void
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @available(iOS 10.0, *)
+@_inheritsConvenienceInitializers @available(iOS 11.0, *)
 @objc open class BaseNotificationService : UserNotifications.UNNotificationServiceExtension {
   @objc override dynamic public func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
   @objc override dynamic public func serviceExtensionTimeWillExpire()
@@ -80,14 +80,11 @@ public struct InAppMessageModel : Swift.Codable {
     public func andTrackingId(trackingId: Swift.String) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andClickData(clickData: Groobee.ClickData) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andAppData(appData: Groobee.GroobeeAppDataApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
+    @discardableResult
     public func andMemberData(memberData: Groobee.GroobeeMemberDataApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andGoodsArray(goods: Swift.Array<Groobee.GroobeeGoodsApi>) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func andCategory(category: Groobee.GroobeeCategoryApi) -> Groobee.GroobeeApi.GroobeeApiBuilder
     public func build() -> Groobee.GroobeeApi
-    public func buildWithAppData() -> Groobee.GroobeeApi
-    public func buildWithMemberData() -> Groobee.GroobeeApi
-    public func buildWithGoodsArray() -> Groobee.GroobeeApi
-    public func buildWithCategory() -> Groobee.GroobeeApi
     @objc deinit
   }
   @objc deinit
@@ -96,6 +93,15 @@ public struct InAppMessageModel : Swift.Codable {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class GroobeeGoodsApi : ObjectiveC.NSObject, Swift.Codable {
   @objc public static var sharedInstance: Groobee.GroobeeGoodsApi
+  public var goodsNm: Swift.String!
+  public var goodsCd: Swift.String?
+  public var goodsCate: Swift.String?
+  public var goodsCateNm: Swift.String?
+  public var goodsAmt: Swift.String?
+  public var goodsPrc: Swift.String?
+  public var goodsSalePrc: Swift.String?
+  public var goodsCnt: Swift.String?
+  public var goodsImg: Swift.String?
   @objc public init(goodsNm: Swift.String!, goodsCd: Swift.String?, goodsCate: Swift.String?, goodsCateNm: Swift.String?, goodsAmt: Swift.String?, goodsPrc: Swift.String?, goodsSalePrc: Swift.String?, goodsCnt: Swift.String?, goodsImg: Swift.String?)
   @objc public func withGoodsNm(goodsNm: Swift.String) -> Groobee.GroobeeGoodsApi.GroobeeGoodsApiBuilder
   @_hasMissingDesignatedInitializers @objc public class GroobeeGoodsApiBuilder : ObjectiveC.NSObject {
@@ -122,6 +128,7 @@ public struct InAppMessageModel : Swift.Codable {
     public func andGrade(grade: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
     public func andAge(age: Swift.Int) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
     public func andGender(gender: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
+    public func andType(type: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
     public func build() -> Groobee.GroobeeMemberDataApi
     @objc deinit
   }
@@ -163,7 +170,8 @@ public struct MessageButton : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers @objc public class GroobeeBuild : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @available(iOS 11.0, *)
+@objc public class GroobeeBuild : ObjectiveC.NSObject {
   @objc public static func configure(_ build: Groobee.GroobeeConfig)
   @objc override dynamic public init()
   @objc deinit
@@ -172,7 +180,8 @@ public struct ClickData : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers @objc open class BaseAPIResponse : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @available(iOS 11.0, *)
+@objc open class BaseAPIResponse : ObjectiveC.NSObject {
   @objc public static var sharedInstance: Groobee.BaseAPIResponse
   @objc public func getWebUrlKey() -> Swift.String
   @objc public func getWebCookieIdKey() -> Swift.String
@@ -208,6 +217,8 @@ public struct ClickData : Swift.Codable {
   public func getFcmToken() -> Swift.String
   @objc public func setMemberId(memberId: Swift.String)
   public func getMemberId() -> Swift.String
+  @objc public func setMemberData(memberData: Swift.String)
+  public func getMemberData() -> Swift.String
   @objc public func initTestCall()
   public func callUserIdSetting()
   @objc public func setAppBundleInformation()
@@ -219,7 +230,7 @@ public struct ClickData : Swift.Codable {
   @objc public func setPushToken(pushToken: Swift.String)
   @objc public func setAppAdId(adId: Swift.String)
   @objc public func setAppEtc(appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String)
-  @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.Int, gender: Swift.String)
+  @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.Int, gender: Swift.String, type: Swift.String)
   @objc public func setMemberJoin(memberId: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
   @objc public func setSearchKeyword(searchKwd: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
   @objc public func setShoppingCart(goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
