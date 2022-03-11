@@ -126,7 +126,7 @@ public struct InAppMessageModel : Swift.Codable {
   @_hasMissingDesignatedInitializers public class GroobeeMemberDataApiBuilder {
     public func andId(id: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
     public func andGrade(grade: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
-    public func andAge(age: Swift.Int) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
+    public func andAge(age: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
     public func andGender(gender: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
     public func andType(type: Swift.String) -> Groobee.GroobeeMemberDataApi.GroobeeMemberDataApiBuilder
     public func build() -> Groobee.GroobeeMemberDataApi
@@ -230,7 +230,7 @@ public struct ClickData : Swift.Codable {
   @objc public func setPushToken(pushToken: Swift.String)
   @objc public func setAppAdId(adId: Swift.String)
   @objc public func setAppEtc(appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String)
-  @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.Int, gender: Swift.String, type: Swift.String)
+  @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String)
   @objc public func setMemberJoin(memberId: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
   @objc public func setSearchKeyword(searchKwd: Swift.String, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
   @objc public func setShoppingCart(goods: Swift.Array<Groobee.GroobeeGoodsApi>, screenId: Swift.String, clickButton: Groobee.DetectClickedButton? = nil)
