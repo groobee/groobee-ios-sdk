@@ -12,13 +12,12 @@ import UserNotificationsUI
 import WebKit
 public typealias DetectClickedButton = () -> Swift.Void
 @_inheritsConvenienceInitializers @available(iOS 11.0, *)
-@objc open class BaseNotificationContent : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
-  @objc override dynamic public func viewDidLoad()
-  @objc public func didReceive(_ notification: UserNotifications.UNNotification)
-  @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+@objc open class GroobeeNotification : ObjectiveC.NSObject {
+  @objc public static var sharedInstance: Groobee.GroobeeNotification
+  @objc public func receiveService(_ request: UserNotifications.UNNotificationRequest, _ bestAttemptContent: UserNotifications.UNMutableNotificationContent, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void) -> Swift.Bool
+  @objc public func receiveContent(_ notification: UserNotifications.UNNotification) -> Swift.Bool
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc override dynamic public init()
 }
 @objc extension URLSession {
   @objc dynamic open class func downloadImage(atURL url: Foundation.URL, withCompletionHandler completionHandler: @escaping (Foundation.Data?, Foundation.NSError?) -> Swift.Void)
@@ -44,13 +43,6 @@ public class InAppMessageViewController : UIKit.UIViewController {
   @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-}
-@_inheritsConvenienceInitializers @available(iOS 11.0, *)
-@objc open class BaseNotificationService : UserNotifications.UNNotificationServiceExtension {
-  @objc override dynamic public func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
-  @objc override dynamic public func serviceExtensionTimeWillExpire()
-  @objc deinit
-  @objc override dynamic public init()
 }
 public struct InAppMessageModel : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws

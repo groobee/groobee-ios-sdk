@@ -194,8 +194,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
-@import UserNotifications;
-@import UserNotificationsUI;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -291,30 +289,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UNNotification;
-@class UNNotificationResponse;
-@class NSBundle;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface BaseNotificationContent : UIViewController <UNNotificationContentExtension>
-- (void)viewDidLoad;
-- (void)didReceiveNotification:(UNNotification * _Nonnull)notification;
-- (void)didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response completionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completion;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class UNNotificationRequest;
-@class UNNotificationContent;
-
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface BaseNotificationService : UNNotificationServiceExtension
-- (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
-- (void)serviceExtensionTimeWillExpire;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class GroobeeConfig;
 
 SWIFT_CLASS("_TtC7Groobee12GroobeeBuild") SWIFT_AVAILABILITY(ios,introduced=11.0)
@@ -374,6 +348,20 @@ SWIFT_CLASS("_TtCC7Groobee15GroobeeGoodsApi22GroobeeGoodsApiBuilder")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class UNNotificationRequest;
+@class UNMutableNotificationContent;
+@class UNNotificationContent;
+@class UNNotification;
+
+SWIFT_CLASS("_TtC7Groobee19GroobeeNotification") SWIFT_AVAILABILITY(ios,introduced=11.0)
+@interface GroobeeNotification : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) GroobeeNotification * _Nonnull sharedInstance;)
++ (GroobeeNotification * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)receiveService:(UNNotificationRequest * _Nonnull)request :(UNMutableNotificationContent * _Nonnull)bestAttemptContent withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)receiveContent:(UNNotification * _Nonnull)notification SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC7Groobee14GroobeePushApi")
 @interface GroobeePushApi : NSObject
@@ -381,6 +369,8 @@ SWIFT_CLASS("_TtC7Groobee14GroobeePushApi")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSBundle;
+@class NSCoder;
 
 SWIFT_CLASS("_TtC7Groobee26InAppMessageViewController") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface InAppMessageViewController : UIViewController
@@ -600,8 +590,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
-@import UserNotifications;
-@import UserNotificationsUI;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -697,30 +685,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UNNotification;
-@class UNNotificationResponse;
-@class NSBundle;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationContent") SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface BaseNotificationContent : UIViewController <UNNotificationContentExtension>
-- (void)viewDidLoad;
-- (void)didReceiveNotification:(UNNotification * _Nonnull)notification;
-- (void)didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response completionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completion;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class UNNotificationRequest;
-@class UNNotificationContent;
-
-SWIFT_CLASS("_TtC7Groobee23BaseNotificationService") SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface BaseNotificationService : UNNotificationServiceExtension
-- (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
-- (void)serviceExtensionTimeWillExpire;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class GroobeeConfig;
 
 SWIFT_CLASS("_TtC7Groobee12GroobeeBuild") SWIFT_AVAILABILITY(ios,introduced=11.0)
@@ -780,6 +744,20 @@ SWIFT_CLASS("_TtCC7Groobee15GroobeeGoodsApi22GroobeeGoodsApiBuilder")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class UNNotificationRequest;
+@class UNMutableNotificationContent;
+@class UNNotificationContent;
+@class UNNotification;
+
+SWIFT_CLASS("_TtC7Groobee19GroobeeNotification") SWIFT_AVAILABILITY(ios,introduced=11.0)
+@interface GroobeeNotification : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) GroobeeNotification * _Nonnull sharedInstance;)
++ (GroobeeNotification * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)receiveService:(UNNotificationRequest * _Nonnull)request :(UNMutableNotificationContent * _Nonnull)bestAttemptContent withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)receiveContent:(UNNotification * _Nonnull)notification SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC7Groobee14GroobeePushApi")
 @interface GroobeePushApi : NSObject
@@ -787,6 +765,8 @@ SWIFT_CLASS("_TtC7Groobee14GroobeePushApi")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSBundle;
+@class NSCoder;
 
 SWIFT_CLASS("_TtC7Groobee26InAppMessageViewController") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface InAppMessageViewController : UIViewController
