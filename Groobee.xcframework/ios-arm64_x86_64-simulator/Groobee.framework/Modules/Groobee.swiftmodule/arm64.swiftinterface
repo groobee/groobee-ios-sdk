@@ -38,7 +38,9 @@ public typealias DetectClickedButton = () -> Swift.Void
 @objc @_inheritsConvenienceInitializers @available(iOS 11.0, *)
 public class InAppMessageViewController : UIKit.UIViewController {
   public static var sharedInstance: Groobee.InAppMessageViewController
+  public func dismissMessages()
   public func setClickEvent(detect: Groobee.DetectClickedButton? = nil)
+  public func callToDI(campaignKey: Swift.String?, msgType: Swift.String?)
   public func show(inAppMessage: Groobee.InAppMessageModel, campaignKey: Swift.String?, msgType: Swift.String?)
   @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
