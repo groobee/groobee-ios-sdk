@@ -10,7 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mponvxrMDjnXXljfrCUIbyTFleU=
+		fnytLflvMmOecF+ctTxdCm25if0=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		z/AXkKOKrNyU2G+6rWN1drLcgQU=
+		NjP56/OEbulC2DGqzOuBWNFGL4E=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dGLbIoQFuReYT8XTpA3jtXZ6tlI=
+		y+FhH5jqEXC6iwOqLqBY+W3UcPc=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		z/AXkKOKrNyU2G+6rWN1drLcgQU=
+		NjP56/OEbulC2DGqzOuBWNFGL4E=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		dGLbIoQFuReYT8XTpA3jtXZ6tlI=
+		y+FhH5jqEXC6iwOqLqBY+W3UcPc=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		4IG/NgWsbCvkekN+D70Z9jZz/5c=
+		0PIMWMB//diQsU/+KReMMUUwkBY=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		q/Y7OtqIgJ3Wqy54BQ7rsK5H+TM=
+		Jo1gIg5hAsABYriw7fPU2E0sD+M=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		4IG/NgWsbCvkekN+D70Z9jZz/5c=
+		0PIMWMB//diQsU/+KReMMUUwkBY=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		q/Y7OtqIgJ3Wqy54BQ7rsK5H+TM=
+		Jo1gIg5hAsABYriw7fPU2E0sD+M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -85,14 +85,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BHtcDtYGhYxtQaL39Im4LDFBWKI1/3A5T/eP8Eq4DJ4=
+			yJI19/VdqgwxD1g3mZbw4aDoVHC21F4d8szA4GFw4x0=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EyBBfx+EM7CzZlJMLLcCfE/VwOKYdHkEyAYlCLyG1qA=
+			tBhZzsAZbc0HGZZMiIyAPcGItJZhc4otkndUlmKjB5U=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
@@ -106,14 +106,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BHtcDtYGhYxtQaL39Im4LDFBWKI1/3A5T/eP8Eq4DJ4=
+			yJI19/VdqgwxD1g3mZbw4aDoVHC21F4d8szA4GFw4x0=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EyBBfx+EM7CzZlJMLLcCfE/VwOKYdHkEyAYlCLyG1qA=
+			tBhZzsAZbc0HGZZMiIyAPcGItJZhc4otkndUlmKjB5U=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -127,14 +127,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S2duT6NzmccZQKe1Lk4MVqvXShM9/zVjb9te6+kWwok=
+			E8iooWQ/U2Mv9kCO/B4SYSnp6eBOQ63SvqJYEhVHqi0=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TYvUoZTSQt2lUFzj7+NWXsKLDNhtARJf6FzHpA/nhQg=
+			WfCp2QWbf8QbJB1Or3/3b+DQ40FizU2TgEPulwv2P+s=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
@@ -148,14 +148,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S2duT6NzmccZQKe1Lk4MVqvXShM9/zVjb9te6+kWwok=
+			E8iooWQ/U2Mv9kCO/B4SYSnp6eBOQ63SvqJYEhVHqi0=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TYvUoZTSQt2lUFzj7+NWXsKLDNhtARJf6FzHpA/nhQg=
+			WfCp2QWbf8QbJB1Or3/3b+DQ40FizU2TgEPulwv2P+s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
