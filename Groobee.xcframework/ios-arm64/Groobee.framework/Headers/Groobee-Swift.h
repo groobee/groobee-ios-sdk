@@ -209,6 +209,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
+SWIFT_CLASS("_TtC7Groobee7Agreeds")
+@interface Agreeds : NSObject
+@property (nonatomic) BOOL agreedAP;
+@property (nonatomic) BOOL agreedAA;
+@property (nonatomic) BOOL agreedAN;
+@end
+
 @class UIColor;
 @class UIViewController;
 @class GroobeeGoodsApi;
@@ -257,6 +265,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setPushAgreeAPWithIsPushAgreeAP:(BOOL)isPushAgreeAP;
 - (void)setPushAgreeAAWithIsPushAgreeAA:(BOOL)isPushAgreeAA;
 - (void)setPushAgreeANWithIsPushAgreeAN:(BOOL)isPushAgreeAN;
+- (void)syncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId;
+- (Agreeds * _Nullable)getSyncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId SWIFT_WARN_UNUSED_RESULT;
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)setAppAdIdWithAdId:(NSString * _Nonnull)adId;
 - (void)setAppEtcWithAppName:(NSString * _Nonnull)appName appVersion:(NSString * _Nonnull)appVersion appOSVersion:(NSString * _Nonnull)appOSVersion;
