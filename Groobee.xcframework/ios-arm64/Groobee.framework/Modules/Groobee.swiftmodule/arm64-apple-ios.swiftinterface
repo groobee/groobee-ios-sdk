@@ -232,7 +232,7 @@ public struct ClickData : Swift.Codable {
   @objc public func setPushAgreeAA(isPushAgreeAA: Swift.Bool)
   @objc public func setPushAgreeAN(isPushAgreeAN: Swift.Bool)
   @objc public func syncMemberAgreed(memberId: Swift.String)
-  @objc public func getSyncMemberAgreed(memberId: Swift.String) -> Groobee.Agreeds?
+  @objc public func getPushAgreed(memberId: Swift.String) -> Groobee.Agreeds?
   @objc public func setPushToken(pushToken: Swift.String)
   @objc public func setAppAdId(adId: Swift.String)
   @objc public func setAppEtc(appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String)

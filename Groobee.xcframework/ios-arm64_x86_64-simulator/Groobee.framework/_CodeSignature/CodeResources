@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/Groobee-Swift.h</key>
 		<data>
-		dlrmCLQupna6D+zQdOUfda376Cg=
+		nVCf9kUr7PUl0wu99Il3YMaK71g=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		eP1Db66JOjbqI/QmLood1ohM7W8=
+		F+FpFTgE7wTFXDTUteqCx09NYxE=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		UhrnR6XNZ4oOQNuFY1KKO5bkv4I=
+		G7En0D0/C4cLEYSfPzvrWu4uLNo=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/hTadap1oDyGURAFP168MK9uwzg=
+		6LbfmPuIQ+k6+jfw1wpOG4ZbfWA=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		UhrnR6XNZ4oOQNuFY1KKO5bkv4I=
+		G7En0D0/C4cLEYSfPzvrWu4uLNo=
 		</data>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		/hTadap1oDyGURAFP168MK9uwzg=
+		6LbfmPuIQ+k6+jfw1wpOG4ZbfWA=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		++pp520uglPIdD9EaCKgzrxMmIg=
+		NdQoh5XgK3mquvjGIdQLpilCnkU=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4BsGsJHnKn/9Mwdd2Athnxi2dUU=
+		UrdfPU83iPScfqq5190U7VGtwBQ=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		++pp520uglPIdD9EaCKgzrxMmIg=
+		NdQoh5XgK3mquvjGIdQLpilCnkU=
 		</data>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		4BsGsJHnKn/9Mwdd2Athnxi2dUU=
+		UrdfPU83iPScfqq5190U7VGtwBQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -71,7 +71,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fCkSX1bLDYMGR/nnA/qJTmc3aibtxHIZU9sOaz+Ao6A=
+			MSfM/hvOcjFrkPlwCmPh0E+WM5KVi0HpCn2sT9G6dH0=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -85,14 +85,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BH4Nl5ju/ICaqllJf0ulTilLwAgZfvvOvow9Vdq3lqE=
+			UYXzqZxGPODGGU+U+TR687i138c9kiRRzVrYp4qm36w=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e3+LX75tHsZtoXJp2NsqhZgtaZjzXRQpzhMRqmrObLc=
+			OqvN74LKPmM41Hwhwo0pmdooMq/PNgsiC3E/YXhYkTM=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftdoc</key>
@@ -106,14 +106,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BH4Nl5ju/ICaqllJf0ulTilLwAgZfvvOvow9Vdq3lqE=
+			UYXzqZxGPODGGU+U+TR687i138c9kiRRzVrYp4qm36w=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e3+LX75tHsZtoXJp2NsqhZgtaZjzXRQpzhMRqmrObLc=
+			OqvN74LKPmM41Hwhwo0pmdooMq/PNgsiC3E/YXhYkTM=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -127,14 +127,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			m/60zbCwDF4tf/KwCLBsnOvm+vDwDB0ZiDGYbYDg3hE=
+			1/ZM+XX2trwNylmRV9Yvt10LBXgh92hQ9LoPfJiY6/c=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qhqaD/gg5bxrrcImXuONkYogwyJDiOihLZflALAvxhg=
+			00aYsX1CbD0CHZYzK6gnb6EhLxJZsNIqmeUv4Xcxenk=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftdoc</key>
@@ -148,14 +148,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			m/60zbCwDF4tf/KwCLBsnOvm+vDwDB0ZiDGYbYDg3hE=
+			1/ZM+XX2trwNylmRV9Yvt10LBXgh92hQ9LoPfJiY6/c=
 			</data>
 		</dict>
 		<key>Modules/Groobee.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qhqaD/gg5bxrrcImXuONkYogwyJDiOihLZflALAvxhg=
+			00aYsX1CbD0CHZYzK6gnb6EhLxJZsNIqmeUv4Xcxenk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -266,7 +266,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BaseAPIRespo
 - (void)setPushAgreeAAWithIsPushAgreeAA:(BOOL)isPushAgreeAA;
 - (void)setPushAgreeANWithIsPushAgreeAN:(BOOL)isPushAgreeAN;
 - (void)syncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId;
-- (Agreeds * _Nullable)getSyncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId SWIFT_WARN_UNUSED_RESULT;
+- (Agreeds * _Nullable)getPushAgreedWithMemberId:(NSString * _Nonnull)memberId SWIFT_WARN_UNUSED_RESULT;
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)setAppAdIdWithAdId:(NSString * _Nonnull)adId;
 - (void)setAppEtcWithAppName:(NSString * _Nonnull)appName appVersion:(NSString * _Nonnull)appVersion appOSVersion:(NSString * _Nonnull)appOSVersion;
